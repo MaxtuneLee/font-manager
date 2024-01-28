@@ -1,0 +1,21 @@
+version: '3'
+services:
+  database:
+    image: prismagraphql/mongo-single-replica:5.0.3
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=default
+      - MONGO_INITDB_ROOT_PASSWORD=default
+    ports:
+      - 27017:27017
+    healthcheck:
+      test: exit 0
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+      - 5555:5555
+    depends_on:
+      database:
+        condition: service_healthy
