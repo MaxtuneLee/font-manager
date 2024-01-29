@@ -22,12 +22,15 @@ model Font {
   uploadedAt    DateTime    @default(now())
   FontFamily    FontFamily? @relation(fields: [fontFamilyId], references: [id])
   fontFamilyId  String?     @db.ObjectId
+  variants      String[]    @default(["regular"])
+  fvar          Json       @default("{}")
 }
 
 model FontFamily {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   name      String
   fonts     Font[]
+  variants  String[] @default(["regular"])
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

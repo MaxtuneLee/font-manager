@@ -19,6 +19,8 @@ export async function GET(req: Request, { params }: { params: { slug: string } }
                         type: true,
                         fontSubFamily: true,
                         uploadedAt: true,
+                        variants: true,
+                        fvar: true
                     }
                 }
             }

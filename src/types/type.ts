@@ -11,7 +11,10 @@
 //     FontFamily    FontFamily? @relation(fields: [fontFamilyId], references: [id])
 //     fontFamilyId  String?     @db.ObjectId
 //   }
-  
+
+import { badgeVariants } from "@/components/ui/badge";
+
+
 //   model FontFamily {
 //     id        String   @id @default(auto()) @map("_id") @db.ObjectId
 //     name      String
@@ -19,7 +22,7 @@
 //     createdAt DateTime @default(now())
 //     updatedAt DateTime @updatedAt
 //   }
-  
+
 //   model accessToken {
 //     id        String   @id @default(auto()) @map("_id") @db.ObjectId
 //     token     String   @unique
@@ -38,12 +41,15 @@ export interface Font {
     license: string;
     uploadedAt: string;
     fontFamilyId?: string;
+    variants: string[] | [];
+    fvar: { [namd: string]: any };
 }
 
 export interface FontFamily {
     id: string;
     name: string;
     fonts: Font[];
+    variants: string[];
     createdAt: string;
     updatedAt: string;
 }

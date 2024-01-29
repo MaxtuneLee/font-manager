@@ -8,11 +8,7 @@ pnpm install
 ```
 2. 准备数据库
 ```bash
-docker run --name mongo \
-      -p 27017:27017 \
-      -e MONGO_INITDB_ROOT_USERNAME="default" \
-      -e MONGO_INITDB_ROOT_PASSWORD="default" \
-      -d prismagraphql/mongo-single-replica:5.0.3
+docker run --name mongo -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME="default" -e MONGO_INITDB_ROOT_PASSWORD="default" -d prismagraphql/mongo-single-replica:5.0.3
 ```
 3. 初始化 Prisma
 ```bash
