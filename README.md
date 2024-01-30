@@ -1,7 +1,7 @@
 # Node 字体管理器
 技术栈为 Next、Prisma、Tailwind CSS
 
-# 如何以开发环境运行？
+## 如何以开发环境运行？
 1. 安装依赖
 ```bash
 pnpm install
@@ -20,7 +20,7 @@ pnpm dlx prisma db push
 pnpm dev
 ```
 
-> 提醒：项目还没有，Production ready
+> 提醒：项目还没有 Production ready
 
 # todo
 - [ ] 更多的字体信息
